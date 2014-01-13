@@ -61,6 +61,7 @@ set novisualbell
 set colorcolumn=80 " show ruler at 80 char
 
 set laststatus=2 " always show the status line
+set showtabline=2 " always show tabline
 
 syntax enable " enable syntax highlighting
 
@@ -93,6 +94,7 @@ set cursorline " show current cursor line
 if has("gui_running")
     set lines=40 columns=160
     set guioptions-=T  "remove toolbar
+    set guioptions-=e " show tabs as in terminal instead of gui tabs
     " set guioptions-=r  "remove right-hand scroll bar
 endif
 
