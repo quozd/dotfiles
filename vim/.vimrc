@@ -27,13 +27,13 @@ filetype off " required by Vundle
 
 set autoread " auto read file on change from outside
 
-set backspace=indent,eol,start " make backspace working correctlyA
+set backspace=indent,eol,start " make backspace working correctly
 
 set hidden " allow Vim to manage multiple buffers effectively
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all 
+" The mapleader has to be set before vundle starts loading all
 " the plugins.
 let mapleader=","
 
@@ -157,6 +157,7 @@ nnoremap <silent><leader>u :exe "set " . (&relativenumber == 1 ? "norelativenumb
 
 " = 7. Misc ==================================================================
 
+" vim-airline configuration
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
@@ -190,3 +191,7 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = '[ro]'
 let g:airline_symbols.linenr = 'line:'
+
+let g:airline#extensions#tabline#enabled = 1 " enable enchased tabline
+let g:airline#extensions#whitespace#enabled = 0 " disable whitespace errors
+
