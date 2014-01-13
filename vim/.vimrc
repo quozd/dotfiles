@@ -31,12 +31,6 @@ set backspace=indent,eol,start " make backspace working correctly
 
 set hidden " allow Vim to manage multiple buffers effectively
 
-" Change leader to a comma because the backslash is too far away
-" That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all
-" the plugins.
-let mapleader=","
-
 " set powershell as default vim shell
 set shell=powershell.exe\ -ExecutionPolicy\ Unrestricted 
 set shellcmdflag=-Command 
@@ -152,10 +146,18 @@ endif
 
 " = 6. Keymaps ===============================================================
 
+" Change leader to a comma because the backslash is too far away
+" That means all \x commands turn into ,x
+" The mapleader has to be set before vundle starts loading all
+" the plugins.
+let mapleader=","
+
 " Toggle between line numbers and relative line numbers
 nnoremap <silent><leader>u :exe "set " . (&relativenumber == 1 ? "norelativenumber" : "relativenumber")<cr>
 
 " = 7. Misc ==================================================================
+
+autocmd BufWritePre * :%s/\s\+$//e " trim whitespace on save
 
 " vim-airline configuration
 if !exists('g:airline_symbols')
