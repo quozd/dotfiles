@@ -160,6 +160,9 @@ nnoremap <silent><leader>u :exe "set " . (&relativenumber == 1 ? "norelativenumb
 " toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
+" go to file
+map <C-t> :FufCoverageFile
+
 
 " = 7. Misc ==================================================================
 
