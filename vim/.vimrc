@@ -32,10 +32,10 @@ set backspace=indent,eol,start " make backspace working correctly
 set hidden " allow Vim to manage multiple buffers effectively
 
 " set powershell as default vim shell
-set shell=powershell.exe\ -ExecutionPolicy\ Unrestricted 
-set shellcmdflag=-Command 
-set shellpipe=> 
-set shellredir=> 
+set shell=powershell.exe\ -ExecutionPolicy\ Unrestricted
+set shellcmdflag=-Command
+set shellpipe=>
+set shellredir=>
 
 " = 2. UI ====================================================================
 
@@ -89,6 +89,8 @@ if has("gui_running")
     set lines=40 columns=160
     set guioptions-=T  "remove toolbar
     set guioptions-=e " show tabs as in terminal instead of gui tabs
+    set guioptions-=L " remove left scrollbar
+    set guioptions-=l
     " set guioptions-=r  "remove right-hand scroll bar
 endif
 
