@@ -163,6 +163,11 @@ map <C-n> :NERDTreeToggle<CR>
 " go to file
 map <C-t> :FufCoverageFile
 
+" move between splits with hjkl
+map <C-H> <C-W>h<C-W>
+map <C-J> <C-W>j<C-W>
+map <C-K> <C-W>k<C-W>
+map <C-L> <C-W>l<C-W>
 
 " = 7. Misc ==================================================================
 
