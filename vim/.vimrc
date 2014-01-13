@@ -155,9 +155,18 @@ let mapleader=","
 " Toggle between line numbers and relative line numbers
 nnoremap <silent><leader>u :exe "set " . (&relativenumber == 1 ? "norelativenumber" : "relativenumber")<cr>
 
+" toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+
 " = 7. Misc ==================================================================
 
 autocmd BufWritePre * :%s/\s\+$//e " trim whitespace on save
+
+" close vim if only window left opened is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+
 
 " vim-airline configuration
 if !exists('g:airline_symbols')
