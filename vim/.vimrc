@@ -116,11 +116,12 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'bling/vim-airline'
 Bundle 'mkitt/tabline.vim'
+Bundle 'othree/html5.vim'
+Bundle "mattn/emmet-vim"
 
 " color scheme
 Bundle 'chriskempson/base16-vim'
 Bundle 'flazz/vim-colorschemes'
-Bundle "mattn/emmet-vim"
 
 " vim-scripts repos
 Bundle 'L9'
