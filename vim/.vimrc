@@ -120,6 +120,7 @@ Bundle 'mkitt/tabline.vim'
 " color scheme
 Bundle 'chriskempson/base16-vim'
 Bundle 'flazz/vim-colorschemes'
+Bundle "mattn/emmet-vim"
 
 " vim-scripts repos
 Bundle 'L9'
