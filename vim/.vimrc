@@ -118,6 +118,8 @@ Bundle 'bling/vim-airline'
 Bundle 'mkitt/tabline.vim'
 Bundle 'othree/html5.vim'
 Bundle "mattn/emmet-vim"
+Bundle "xolox/vim-misc"
+Bundle "xolox/vim-session"
 
 " color scheme
 Bundle 'chriskempson/base16-vim'
@@ -178,6 +180,14 @@ autocmd BufWritePre * :%s/\s\+$//e " trim whitespace on save
 " close vim if only window left opened is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" auto restore default vim session on vim start without files without prompt
+let g:session_autoload = 'yes'
+
+" auto save default session on vim close without prompt
+let g:session_autosave = 'yes'
+
+" auto save session every 10 minutes
+let g:session_autosave_periodic = 10
 
 
 " vim-airline configuration
