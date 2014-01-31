@@ -120,6 +120,7 @@ Bundle 'othree/html5.vim'
 Bundle "mattn/emmet-vim"
 Bundle "xolox/vim-misc"
 Bundle "xolox/vim-session"
+Bundle "PProvost/vim-ps1"
 
 " color scheme
 Bundle 'chriskempson/base16-vim'
