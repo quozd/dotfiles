@@ -70,6 +70,9 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
+" use 2 space ident for ruby files
+autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
+
 filetype plugin on
 filetype indent on
 
