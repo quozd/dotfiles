@@ -124,14 +124,11 @@ Bundle "mattn/emmet-vim"
 Bundle "xolox/vim-misc"
 Bundle "xolox/vim-session"
 Bundle "PProvost/vim-ps1"
+Bundle "kien/ctrlp.vim"
 
 " color scheme
 Bundle 'chriskempson/base16-vim'
 Bundle 'flazz/vim-colorschemes'
-
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 
 " non-GitHub repos
 " Bundle 'git://git.wincent.com/command-t.git'
@@ -167,9 +164,6 @@ nnoremap <silent><leader>u :exe "set " . (&relativenumber == 1 ? "norelativenumb
 
 " toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
-
-" go to file
-map <C-t> :FufCoverageFile
 
 " move between splits with hjkl
 map <C-H> <C-W>h<C-W>
