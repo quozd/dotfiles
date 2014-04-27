@@ -6,6 +6,7 @@
 "
 " Version:
 "     0.1 - 1/12/2014
+"     0.2 - 4/29/2014
 "
 " Sections:
 "     -> 1. General
@@ -31,11 +32,13 @@ set backspace=indent,eol,start " make backspace working correctly
 
 set hidden " allow Vim to manage multiple buffers effectively
 
-" set powershell as default vim shell
-set shell=powershell.exe\ -ExecutionPolicy\ Unrestricted
-set shellcmdflag=-Command
-set shellpipe=>
-set shellredir=>
+if has("win32")
+  " set powershell as default vim shell
+  set shell=powershell.exe\ -ExecutionPolicy\ Unrestricted
+  set shellcmdflag=-Command
+  set shellpipe=>
+  set shellredir=>
+endif
 
 " = 2. UI ====================================================================
 
@@ -107,34 +110,36 @@ set noswapfile
 " = 4. Plugins ===============================================================
 
 " Vundle init
-set rtp+=$HOME/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=$HOME/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " original repos on GitHub
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'bling/vim-airline'
-Bundle 'mkitt/tabline.vim'
-Bundle 'othree/html5.vim'
-Bundle "mattn/emmet-vim"
-Bundle "xolox/vim-misc"
-Bundle "xolox/vim-session"
-Bundle "PProvost/vim-ps1"
-Bundle "kien/ctrlp.vim"
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'mkitt/tabline.vim'
+Plugin 'othree/html5.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+Plugin 'PProvost/vim-ps1'
+Plugin 'kien/ctrlp.vim'
 
 " color scheme
-Bundle 'chriskempson/base16-vim'
-Bundle 'flazz/vim-colorschemes'
+Plugin 'chriskempson/base16-vim'
+Plugin 'flazz/vim-colorschemes'
 
 " non-GitHub repos
-" Bundle 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 
 " Git repos on your local machine (i.e. when working on your own plugin)
-" Bundle 'file:///Users/gmarik/path/to/plugin'
+" Plugin 'file:///Users/gmarik/path/to/plugin'
+
+call vundle#end()
 
 " = 5. Colors and fonts
 
@@ -143,7 +148,7 @@ colorscheme base16-ocean
 
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 12
+    set guifont=Ubuntu_Mono\ 12
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
