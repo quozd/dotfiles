@@ -127,6 +127,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'PProvost/vim-ps1'
 Plugin 'kien/ctrlp.vim'
+Plugin 'godlygeek/tabular'
 
 " color scheme
 Plugin 'chriskempson/base16-vim'
