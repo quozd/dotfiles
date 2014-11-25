@@ -120,7 +120,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
+" Plugin 'bling/vim-airline'
 Plugin 'mkitt/tabline.vim'
 Plugin 'othree/html5.vim'
 Plugin 'mattn/emmet-vim'
@@ -146,7 +147,7 @@ call vundle#end()
 
 set background=dark
 " colorscheme base16-ocean
-colorscheme base16-tomorrow
+colorscheme base16-tomorrow-alt
 
 set guifont=Consolas:h11:cANSI
 
@@ -190,46 +191,9 @@ let g:session_autosave = 'yes'
 " auto save session every 10 minutes
 let g:session_autosave_periodic = 10
 
-
-" vim-airline configuration
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
 let NERDTreeDirArrows=1
 
-" unicode symbols
-let g:airline_left_sep = ''
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.linenr = 'line:'
-let g:airline_symbols.branch = ''
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-
- " powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = '@'
-let g:airline_symbols.readonly = '[ro]'
-let g:airline_symbols.linenr = 'line:'
-
-" old vim-powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = '[ro]'
-let g:airline_symbols.linenr = 'line:'
-
-let g:airline#extensions#tabline#enabled = 0 " enable enchased tabline
-let g:airline#extensions#whitespace#enabled = 0 " disable whitespace errors
+let g:lightline = { 'colorscheme': 'Tomorrow' }
 
 " remove bold styling
 function! Highlight_remove_attr(attr)
