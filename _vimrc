@@ -96,6 +96,7 @@ set guioptions-=T  "remove toolbar
 set guioptions-=e " show tabs as in terminal instead of gui tabs
 set guioptions-=L " remove left scrollbar
 set guioptions-=l
+set guioptions-=m " remove menu
 " set guioptions-=r  "remove right-hand scroll bar
 
 " = 3. Files and backups =====================================================
@@ -144,7 +145,8 @@ call vundle#end()
 " = 5. Colors and fonts
 
 set background=dark
-colorscheme base16-ocean
+" colorscheme base16-ocean
+colorscheme base16-tomorrow
 
 set guifont=Consolas:h11:cANSI
 
