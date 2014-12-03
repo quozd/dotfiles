@@ -1,68 +1,95 @@
-" ============================================================================
-"
-" Maintainer:
-"     Vitali Fokin <vitali.fokin@gmail.com>
-"     http://github.com/quozd
-"
-" Version:
-"     0.1 - 1/12/2014
-"     0.2 - 4/29/2014
-"
-" Sections:
-"     -> 1. General
-"     -> 2. UI
-"     -> 3. Files and backups
-"     -> 4. Plugins
-"     -> 5. Colors and fonts
-"     -> 6. Keymaps
-"     -> 7. Misc
-"
-" ============================================================================
+" Disable vi compatibility
+set nocompatible
 
-" = 1. General ===============================================================
-
-set encoding=utf-8
-set history=700 " VIM history
-set nocompatible " be iMproved
+" Disable filetype detection before installing plugins, required by Vundle
 filetype off " required by Vundle
 
-set autoread " auto read file on change from outside
+" Set up Vundle - plugin manager
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-set backspace=indent,eol,start " make backspace working correctly
+" Let vundle manage vundle :)
+Plugin 'gmarik/Vundle.vim'
 
-set hidden " allow Vim to manage multiple buffers effectively
+" General plugins
+Plugin 'tpope/vim-fugitive' " Git integration
+Plugin 'scrooloose/nerdtree' " Filebrowser
+Plugin 'itchyny/lightline.vim' " Enchased status line
+Plugin 'mkitt/tabline.vim' " Enchased tab line
+Plugin 'xolox/vim-session' " Save opened files on exit
+Plugin 'kien/ctrlp.vim' " Go to everything
 
-if has("win32")
-  " set powershell as default vim shell
-  set shell=powershell.exe\ -ExecutionPolicy\ Unrestricted
-  set shellcmdflag=-Command
-  set shellpipe=>
-  set shellredir=>
-endif
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
+Plugin 'othree/html5.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'xolox/vim-misc'
+Plugin 'godlygeek/tabular'
 
-" = 2. UI ====================================================================
+" Languages support
+Plugin 'leafgarland/typescript-vim' " Typescript
 
-set so=10 " show 10 line to the cursor when moving verticaly
-set ruler " always show current position
+" Color schemes
+Plugin 'chriskempson/base16-vim'
+Plugin 'flazz/vim-colorschemes'
 
-set ignorecase " ignore case when searching
-set smartcase " try to be smart about cases
-set hlsearch " hightlight search results
+" Finish plugins installation
+call vundle#end()
 
-set showmatch " show matching brackets when text indicator is over them
+" Enable filetype detection
+filetype plugin indent on
+
+" Set encoding to utf-8
+set encoding=utf-8
+
+" Set vim history lenght to 700 commands
+set history=700
+
+" auto read file on change from outside
+set autoread
+
+" make backspace working correctly
+set backspace=indent,eol,start
+
+" allow Vim to manage multiple buffers effectively
+set hidden
+
+" show 10 line to the cursor when moving verticaly
+set so=10
+
+" always show current position
+set ruler
+
+" ignore case when searching
+set ignorecase
+
+" try to be smart about cases
+set smartcase
+
+" hightlight search results
+set hlsearch
+
+" show matching brackets when text indicator is over them
+set showmatch
 
 " no annoying sound on errors
 set noerrorbells
 set novisualbell
 
-set colorcolumn=80 " show ruler at 80 char
+" show ruler at 80 char
+set colorcolumn=120
 
-set laststatus=2 " always show the status line
-set showtabline=2 " always show tabline
+" always show the status line
+set laststatus=2
 
-syntax enable " enable syntax highlighting
+" always show tabline
+set showtabline=2
 
-set number " show line numbers
+" enable syntax highlighting
+syntax enable
+
+" show line numbers
+set number
 
 " configure indentation
 set autoindent
@@ -76,93 +103,56 @@ set expandtab
 " use 2 space ident for ruby files
 autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
-filetype plugin on
-filetype indent on
-
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
-set nowrap " don't wrap lines
-set linebreak " wrap line at convenient points
+" don't wrap lines
+set nowrap
 
-set wildmenu " show completion options on <TAB>
-set wildmode=list:longest " complete only up to the point of ambiguity
+" wrap line at convenient points
+set linebreak
 
-set showmode " show current vim mode
-set cursorline " show current cursor line
+" show completion options on <TAB>
+set wildmenu
 
-if has("gui_running")
-    set lines=40 columns=160
-    set guioptions-=T  "remove toolbar
-    set guioptions-=e " show tabs as in terminal instead of gui tabs
-    set guioptions-=L " remove left scrollbar
-    set guioptions-=l
-    " set guioptions-=r  "remove right-hand scroll bar
-endif
+" complete only up to the point of ambiguity
+set wildmode=list:longest
 
-" = 3. Files and backups =====================================================
+" show current vim mode
+set showmode
+
+" show current cursor line
+set cursorline
+
+" set default buffer size
+set lines=40 columns=160
+
+" configure gui=
+"set guioptions-=T  "remove toolbar
+"set guioptions-=e " show tabs as in terminal instead of gui tabs
+"set guioptions-=L " remove left scrollbar
+"set guioptions-=l
+"set guioptions-=m " remove menu
+" set guioptions-=r  "remove right-hand scroll bar
 
 " turn backup off, since most stuff is in git
 set nobackup
 set nowb
 set noswapfile
 
-" = 4. Plugins ===============================================================
-
-" Vundle init
-set rtp+=$HOME/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-
-" original repos on GitHub
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
-Plugin 'mkitt/tabline.vim'
-Plugin 'othree/html5.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
-Plugin 'PProvost/vim-ps1'
-Plugin 'kien/ctrlp.vim'
-
-" color scheme
-Plugin 'chriskempson/base16-vim'
-Plugin 'flazz/vim-colorschemes'
-
-" non-GitHub repos
-" Plugin 'git://git.wincent.com/command-t.git'
-
-" Git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///Users/gmarik/path/to/plugin'
-
-call vundle#end()
-
-" = 5. Colors and fonts
-
+" set colorscheme
 set background=dark
-colorscheme base16-ocean
+"colorscheme base16-tomorrow-alt
+colorscheme base16-tomorrow
 
-if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Ubuntu_Mono\ 12
-  elseif has("gui_macvim")
-    set guifont=Menlo\ Regular:h14
-  elseif has("gui_win32")
-    set guifont=Courier_New:h10:cDEFAULT
-  endif
-endif
-
-" = 6. Keymaps ===============================================================
+" set font
+"set guifont=Consolas:h11:cANSI
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
 " The mapleader has to be set before vundle starts loading all
 " the plugins.
-let mapleader=","
+" let mapleader=","
 
 " Toggle between line numbers and relative line numbers
 nnoremap <silent><leader>u :exe "set " . (&relativenumber == 1 ? "norelativenumber" : "relativenumber")<cr>
@@ -176,7 +166,9 @@ map <C-J> <C-W>j<C-W>
 map <C-K> <C-W>k<C-W>
 map <C-L> <C-W>l<C-W>
 
-" = 7. Misc ==================================================================
+" ctrp config
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 autocmd BufWritePre * :%s/\s\+$//e " trim whitespace on save
 
@@ -192,42 +184,61 @@ let g:session_autosave = 'yes'
 " auto save session every 10 minutes
 let g:session_autosave_periodic = 10
 
+" use modern arrows in nerdtree instead of ascii
+let NERDTreeDirArrows=1
 
-" vim-airline configuration
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
+" set colorscheme for status line
+let g:lightline = { 'colorscheme': 'Tomorrow' }
 
-" unicode symbols
-let g:airline_left_sep = ''
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.linenr = 'line:'
-let g:airline_symbols.branch = ''
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$|node_modules\|bower_components\|\.sass-cache\',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
 
- " powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = '@'
-let g:airline_symbols.readonly = '[ro]'
-let g:airline_symbols.linenr = 'line:'
+" remove bold styling
+function! Highlight_remove_attr(attr)
+    " save selection registers
+    new
+    silent! put
 
-" old vim-powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = '[ro]'
-let g:airline_symbols.linenr = 'line:'
+    " get current highlight configuration
+    redir @x
+    silent! highlight
+    redir END
+    " open temp buffer
+    new
+    " paste in
+    silent! put x
 
-let g:airline#extensions#tabline#enabled = 1 " enable enchased tabline
-let g:airline#extensions#whitespace#enabled = 0 " disable whitespace errors
+    " convert to vim syntax (from Mkcolorscheme.vim,
+    "   http://vim.sourceforge.net/scripts/script.php?script_id=85)
+    " delete empty,"links" and "cleared" lines
+    silent! g/^$\| links \| cleared/d
+    " join any lines wrapped by the highlight command output
+    silent! %s/\n \+/ /
+    " remove the xxx's
+    silent! %s/ xxx / /
+    " add highlight commands
+    silent! %s/^/highlight /
+    " protect spaces in some font names
+    silent! %s/font=\(.*\)/font='\1'/
 
+    " substitute bold with "NONE"
+    execute 'silent! %s/' . a:attr . '\([\w,]*\)/NONE\1/geI'
+    " yank entire buffer
+    normal ggVG
+    " copy
+    silent! normal "xy
+    " run
+    execute @x
+
+    " remove temp buffer
+    bwipeout!
+
+    " restore selection registers
+    silent! normal ggVGy
+    bwipeout!
+endfunction
+
+" autocmd BufNewFile,BufRead * call Highlight_remove_attr("bold")
