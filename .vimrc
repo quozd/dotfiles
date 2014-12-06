@@ -4,6 +4,8 @@ set nocompatible
 " Disable filetype detection before installing plugins, required by Vundle
 filetype off " required by Vundle
 
+let mapleader=","
+
 " Set up Vundle - plugin manager
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -12,12 +14,14 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " General plugins
+Plugin 'editorconfig/editorconfig-vim' " Editorconfig support
 Plugin 'tpope/vim-fugitive' " Git integration
 Plugin 'scrooloose/nerdtree' " Filebrowser
 Plugin 'itchyny/lightline.vim' " Enchased status line
 Plugin 'mkitt/tabline.vim' " Enchased tab line
-Plugin 'xolox/vim-session' " Save opened files on exit
+" Plugin 'xolox/vim-session' " Save opened files on exit
 Plugin 'kien/ctrlp.vim' " Go to everything
+Plugin 'Shougo/neocomplete.vim' " Autocomplete
 
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
@@ -130,10 +134,10 @@ set lines=40 columns=160
 " configure gui=
 "set guioptions-=T  "remove toolbar
 "set guioptions-=e " show tabs as in terminal instead of gui tabs
-"set guioptions-=L " remove left scrollbar
+set guioptions-=L " remove left scrollbar
 "set guioptions-=l
 "set guioptions-=m " remove menu
-" set guioptions-=r  "remove right-hand scroll bar
+ set guioptions-=r  "remove right-hand scroll bar
 
 " turn backup off, since most stuff is in git
 set nobackup
@@ -143,7 +147,7 @@ set noswapfile
 " set colorscheme
 set background=dark
 "colorscheme base16-tomorrow-alt
-colorscheme base16-tomorrow
+colorscheme base16-tomorrow-alt
 
 " set font
 "set guifont=Consolas:h11:cANSI
@@ -176,13 +180,13 @@ autocmd BufWritePre * :%s/\s\+$//e " trim whitespace on save
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " auto restore default vim session on vim start without files without prompt
-let g:session_autoload = 'yes'
+" let g:session_autoload = 'yes'
 
 " auto save default session on vim close without prompt
-let g:session_autosave = 'yes'
+" let g:session_autosave = 'yes'
 
 " auto save session every 10 minutes
-let g:session_autosave_periodic = 10
+" let g:session_autosave_periodic = 10
 
 " use modern arrows in nerdtree instead of ascii
 let NERDTreeDirArrows=1
@@ -195,6 +199,55 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$|node_modules\|bower_components\|\.sass-cache\',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
+
+" Necopml
+let g:acp_enableAtStartup = 0
+
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+
+function! s:my_cr_function()
+  "return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+
+
+" AutoComplPop like behavior.
+let g:neocomplete#enable_auto_select = 1
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
 
 " remove bold styling
 function! Highlight_remove_attr(attr)
@@ -241,4 +294,4 @@ function! Highlight_remove_attr(attr)
     bwipeout!
 endfunction
 
-" autocmd BufNewFile,BufRead * call Highlight_remove_attr("bold")
+autocmd BufNewFile,BufRead * call Highlight_remove_attr("bold")
