@@ -28,6 +28,8 @@ Plugin 'airblade/vim-gitgutter'
 " Languages support
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 " Color schemes
 Plugin 'chriskempson/base16-vim'
@@ -165,3 +167,5 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 au BufNewFile,BufRead *.jbuilder call s:setf('ruby')
+
+let g:used_javascript_libs = 'underscore,angularjs,chai,jasmine'
