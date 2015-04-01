@@ -20,7 +20,7 @@ Plugin 'scrooloose/nerdtree' " Filebrowser
 Plugin 'scrooloose/nerdcommenter' " Comment code
 Plugin 'itchyny/lightline.vim' " Enchased status line
 Plugin 'kien/ctrlp.vim' " Go to everything
-Plugin 'Valloric/YouCompleteMe' " Autocomplete
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'airblade/vim-gitgutter'
@@ -30,6 +30,7 @@ Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'marijnh/tern_for_vim'
 
 " Color schemes
 Plugin 'chriskempson/base16-vim'
@@ -127,12 +128,14 @@ set nobackup
 set nowb
 set noswapfile
 
+:set completeopt-=preview
+
 " set colorscheme
 set background=dark
 colorscheme base16-tomorrow-alt
 
 " Toggle between line numbers and relative line numbers
-autocmd InsertEnter * :set number
+autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 nnoremap <silent><leader>u :exe "set " . (&relativenumber == 1 ? "norelativenumber" : "relativenumber")<cr>
 
@@ -169,3 +172,19 @@ let g:ctrlp_custom_ignore = {
 au BufNewFile,BufRead *.jbuilder call s:setf('ruby')
 
 let g:used_javascript_libs = 'underscore,angularjs,chai,jasmine'
+
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+
+let g:tern_map_keys=1
+let g:tern_show_argument_hints='on_hold'
+let g:tern_show_signature_in_pum=1
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=tern#Complete
