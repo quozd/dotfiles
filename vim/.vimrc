@@ -17,10 +17,55 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim' " Editorconfig support
 Plugin 'tpope/vim-fugitive' " Git integration
 Plugin 'scrooloose/nerdtree' " Filebrowser
+
+" toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+" close vim if only window left opened is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" use modern arrows in nerdtree instead of ascii
+let NERDTreeDirArrows=1
+
 Plugin 'scrooloose/nerdcommenter' " Comment code
 Plugin 'itchyny/lightline.vim' " Enchased status line
+
+" set colorscheme for status line
+let g:lightline = { 'colorscheme': 'Tomorrow' }
+
 Plugin 'kien/ctrlp.vim' " Go to everything
+
+" ctrp config
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](node_modules|target|dist|log|tmp|bower_components)|(\.(swp|ico|git|svn|sass-cache))$',
+  \ 'file': '\v\.(exe|so|dll|log|DS_Store|dat)$'
+  \ }
+
 Plugin 'Shougo/neocomplete.vim'
+
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=tern#Complete
+
+Plugin 'SirVer/ultisnips'
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'airblade/vim-gitgutter'
@@ -30,7 +75,17 @@ Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
+
+let g:used_javascript_libs = 'underscore,angularjs,chai,jasmine,react'
+
+Plugin 'mxw/vim-jsx'
 Plugin 'marijnh/tern_for_vim'
+
+:set completeopt-=preview
+
+let g:tern_map_keys=1
+let g:tern_show_argument_hints='on_hold'
+let g:tern_show_signature_in_pum=1
 
 " Color schemes
 Plugin 'chriskempson/base16-vim'
@@ -128,8 +183,6 @@ set nobackup
 set nowb
 set noswapfile
 
-:set completeopt-=preview
-
 " set colorscheme
 set background=dark
 colorscheme base16-tomorrow-alt
@@ -139,52 +192,12 @@ autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 nnoremap <silent><leader>u :exe "set " . (&relativenumber == 1 ? "norelativenumber" : "relativenumber")<cr>
 
-" toggle NERDTree
-map <C-n> :NERDTreeToggle<CR>
-
 " move between splits with hjkl
 map <C-H> <C-W>h
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 
-" ctrp config
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
 autocmd BufWritePre * :%s/\s\+$//e " trim whitespace on save
 
-" close vim if only window left opened is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" use modern arrows in nerdtree instead of ascii
-let NERDTreeDirArrows=1
-
-" set colorscheme for status line
-let g:lightline = { 'colorscheme': 'Tomorrow' }
-
-" Ignore some folders and files for CtrlP indexing
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](node_modules|target|dist|log|tmp|bower_components)|(\.(swp|ico|git|svn|sass-cache))$',
-  \ 'file': '\v\.(exe|so|dll|log|DS_Store|dat)$'
-  \ }
-
 au BufNewFile,BufRead *.jbuilder call s:setf('ruby')
-
-let g:used_javascript_libs = 'underscore,angularjs,chai,jasmine'
-
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
-
-let g:tern_map_keys=1
-let g:tern_show_argument_hints='on_hold'
-let g:tern_show_signature_in_pum=1
-
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=tern#Complete
