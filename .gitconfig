@@ -1,0 +1,22 @@
+[user]
+	name = Vitali Fokin
+	email = vitali.fokin@gmail.com
+[credential]
+	helper = store
+[push]
+	default = simple
+[core]
+	editor = vim
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[alias]
+	co = checkout
+	st = status
+	c = commit
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
