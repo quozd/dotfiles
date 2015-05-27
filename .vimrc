@@ -26,12 +26,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " use modern arrows in nerdtree instead of ascii
 let NERDTreeDirArrows=1
+" show hidden files in nerdtree
+let NERDTreeShowHidden=1
 
 Plugin 'scrooloose/nerdcommenter' " Comment code
 Plugin 'itchyny/lightline.vim' " Enchased status line
 
 " set colorscheme for status line
-let g:lightline = { 'colorscheme': 'Tomorrow' }
+"let g:lightline = { 'colorscheme': '16color' }
 
 Plugin 'kien/ctrlp.vim' " Go to everything
 
@@ -49,7 +51,7 @@ Plugin 'Shougo/neocomplete.vim'
 
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
@@ -65,6 +67,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+Plugin 'rking/ag.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
@@ -72,6 +75,7 @@ Plugin 'airblade/vim-gitgutter'
 
 " Languages support
 Plugin 'othree/html5.vim'
+Plugin 'Valloric/MatchTagAlways'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -201,3 +205,4 @@ map <C-L> <C-W>l
 autocmd BufWritePre * :%s/\s\+$//e " trim whitespace on save
 
 au BufNewFile,BufRead *.jbuilder call s:setf('ruby')
+au BufRead,BufNewFile *.es6 setfiletype javascript
