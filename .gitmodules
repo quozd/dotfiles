@@ -1,3 +1,3 @@
 [submodule "zsh"]
 	path = zsh
-	url = git@github.com:quozd/prezto
+	url = https://github.com/quozd/prezto
