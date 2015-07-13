@@ -39,7 +39,7 @@ Plugin 'kien/ctrlp.vim' " Go to everything
 
 " ctrp config
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMRU'
 
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
