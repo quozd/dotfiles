@@ -78,18 +78,10 @@ Plugin 'othree/html5.vim'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'othree/javascript-libraries-syntax.vim'
-
-let g:used_javascript_libs = 'underscore,angularjs,chai,jasmine,react'
 
 Plugin 'mxw/vim-jsx'
-Plugin 'marijnh/tern_for_vim'
 
-:set completeopt-=preview
-
-let g:tern_map_keys=1
-let g:tern_show_argument_hints='on_hold'
-let g:tern_show_signature_in_pum=1
+let g:jsx_ext_required = 0
 
 " Color schemes
 Plugin 'chriskempson/base16-vim'
