@@ -1,28 +1,89 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-echo 'Installing dotfiles...'
+# Set environment variables
+DOTFILES_ROOT=$(pwd -P)
+PLATFORM=$(uname -s)
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# Exit on non-zero code
+set -e
 
-echo 'Symlinking config files...'
+echo ""
 
-ln -s "${SCRIPT_DIR}/vim/.vimrc" ~/.vimrc
-ln -s "${SCRIPT_DIR}/tmux/.tmux.conf" ~/.tmux.conf
-ln -s "${SCRIPT_DIR}/git/.gitconfig" ~/.gitconfig
+# Logging functions
+info () {
+  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
 
-ln -s "${SCRIPT_DIR}/shell/base16-shell" ~/.config/base16-shell
+warn () {
+  printf "\r\033[2K  [ \033[00;33mWARN\033[0m ] $1\n"
+}
 
-echo 'Done.'
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
 
-echo 'Installing Prezto...'
+fail () {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+  echo ""
+  exit
+}
 
-ln -s "${SCRIPT_DIR}/zsh" ~/.zprezto
-ln -s "${SCRIPT_DIR}/zsh/runcoms/zshrc" ~/.zshrc
-ln -s "${SCRIPT_DIR}/zsh/runcoms/zlogin" ~/.zlogin
-ln -s "${SCRIPT_DIR}/zsh/runcoms/zlogout" ~/.zlogout
-ln -s "${SCRIPT_DIR}/zsh/runcoms/zpreztorc" ~/.zpreztorc
-ln -s "${SCRIPT_DIR}/zsh/runcoms/zprofile" ~/.zprofile
-ln -s "${SCRIPT_DIR}/zsh/runcoms/zshenv" ~/.zshenv
+# Check prerequirements
+#if ! [ git --version 2>&1 >/dev/null ]
+#then
+  #fail "Git is not installed"
+#fi
 
-echo 'Done.'
+# Start installation
+info "Starting configuration"
+info "Dotfiles root directory: $DOTFILES_ROOT"
+info "Platform: $PLATFORM"
 
+# Neovim
+info "Configuring Neovim"
+
+mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
+ln -s $DOTFILES_ROOT/nvim $XDG_CONFIG_HOME/nvim
+
+success "Neovim is configured"
+
+# Vim
+info "Configuring vim"
+
+ln -s $DOTFILES_ROOT/vim/vim ~/.vim
+ln -s $DOTFILES_ROOT/vim/.vimrc ~/.vimrc
+
+success "Vim is configured"
+
+# Tmux
+info "Configuring tmux"
+
+ln -s $DOTFILES_ROOT/tmux/.tmux.conf ~/.tmux.conf
+
+success "Tmux is configured"
+
+# Git
+info "Configuring git"
+
+ln -s $DOTFILES_ROOT/git/.gitconfig ~/.gitconfig
+ln -s $DOTFILES_ROOT/git/.gitignore ~/.gitignore
+
+success "Git is configured"
+
+# Shell
+info "Configuring shell"
+
+ln -s $DOTFILES_ROOT/bash/base16-shell ~/.config/base16-shell
+ln -s $DOTFILES_ROOT/bash/bashrc.d ~/.bashrc.d
+ln -s $DOTFILES_ROOT/bash/bashrc ~/.bashrc
+ln -s $DOTFILES_ROOT/bash/bash_profile ~/.bash_profile
+
+success "Shell is configured"
+
+info "Cleaning up"
+
+unset DOTFILES_ROOT
+unset PLATFORM
+
+success "Clean is done"
+success "Configuration is done"

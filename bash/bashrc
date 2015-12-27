@@ -1,0 +1,51 @@
+# Autocorrect fudged paths in cd calls
+shopt -s cdspell
+# Update columns and rows if window size changes
+shopt -s checkwinsize
+# Put multi-line commands onto one line of history
+shopt -s cmdhist
+# Include dotfiles in pattern matching
+shopt -s dotglob
+# Enable advanced pattern matching
+shopt -s extglob
+# Append rather than overwrite Bash history
+shopt -s histappend
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob;
+
+# These options only exist since Bash 4.0-alpha
+if ((BASH_VERSINFO[0] == 4)) ; then
+  # Autocorrect fudged paths during completion
+  shopt -s dirspell
+  # Enable double-starring paths
+  shopt -s globstar
+  # Warn me about stopped jobs when exiting; only if >=4.1 due to bug
+  # <https://lists.gnu.org/archive/html/bug-bash/2009-02/msg00176.html>
+  if ((BASH_VERSINFO[1] >= 1)) ; then
+    shopt -s checkjobs
+  fi
+
+  # Expand variables in directory completion; only available since 4.3
+  if ((BASH_VERSINFO[1] >= 3)) ; then
+    shopt -s direxpand
+  fi
+fi
+
+# Load any supplementary scripts
+if [[ -d $HOME/.bashrc.d ]] ; then
+  for bashrc in "$HOME"/.bashrc.d/*.bash ; do
+    if [[ -e $bashrc ]] ; then
+      source "$bashrc"
+    fi
+  done
+  unset -v bashrc
+fi
+
+# Node version manager
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Fuzzy finder
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Base16 colors
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
