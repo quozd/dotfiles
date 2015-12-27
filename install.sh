@@ -50,7 +50,6 @@ success "Neovim is configured"
 # Vim
 info "Configuring vim"
 
-ln -s $DOTFILES_ROOT/vim/vim ~/.vim
 ln -s $DOTFILES_ROOT/vim/.vimrc ~/.vimrc
 
 success "Vim is configured"
