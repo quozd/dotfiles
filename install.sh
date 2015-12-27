@@ -43,39 +43,39 @@ info "Platform: $PLATFORM"
 info "Configuring Neovim"
 
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
-ln -s $DOTFILES_ROOT/nvim $XDG_CONFIG_HOME/nvim
+ln -snf $DOTFILES_ROOT/nvim $XDG_CONFIG_HOME/nvim
 
 success "Neovim is configured"
 
 # Vim
 info "Configuring vim"
 
-ln -s $DOTFILES_ROOT/vim/.vimrc ~/.vimrc
+ln -snf $DOTFILES_ROOT/vim/.vimrc ~/.vimrc
 
 success "Vim is configured"
 
 # Tmux
 info "Configuring tmux"
 
-ln -s $DOTFILES_ROOT/tmux/.tmux.conf ~/.tmux.conf
+ln -snf $DOTFILES_ROOT/tmux/.tmux.conf ~/.tmux.conf
 
 success "Tmux is configured"
 
 # Git
 info "Configuring git"
 
-ln -s $DOTFILES_ROOT/git/.gitconfig ~/.gitconfig
-ln -s $DOTFILES_ROOT/git/.gitignore ~/.gitignore
+ln -snf $DOTFILES_ROOT/git/.gitconfig ~/.gitconfig
+ln -snf $DOTFILES_ROOT/git/.gitignore ~/.gitignore
 
 success "Git is configured"
 
 # Shell
 info "Configuring shell"
 
-ln -s $DOTFILES_ROOT/bash/base16-shell ~/.config/base16-shell
-ln -s $DOTFILES_ROOT/bash/bashrc.d ~/.bashrc.d
-ln -s $DOTFILES_ROOT/bash/bashrc ~/.bashrc
-ln -s $DOTFILES_ROOT/bash/bash_profile ~/.bash_profile
+ln -snf $DOTFILES_ROOT/bash/base16-shell ~/.config/base16-shell
+ln -snf $DOTFILES_ROOT/bash/bashrc.d ~/.bashrc.d
+ln -snf $DOTFILES_ROOT/bash/bashrc ~/.bashrc
+ln -snf $DOTFILES_ROOT/bash/bash_profile ~/.bash_profile
 
 success "Shell is configured"
 
