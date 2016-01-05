@@ -50,22 +50,22 @@ success "Neovim is configured"
 # Vim
 info "Configuring vim"
 
-ln -snf $DOTFILES_ROOT/vim/.vimrc ~/.vimrc
+ln -snf $DOTFILES_ROOT/vim/vimrc ~/.vimrc
 
 success "Vim is configured"
 
 # Tmux
 info "Configuring tmux"
 
-ln -snf $DOTFILES_ROOT/tmux/.tmux.conf ~/.tmux.conf
+ln -snf $DOTFILES_ROOT/tmux/tmux.conf ~/.tmux.conf
 
 success "Tmux is configured"
 
 # Git
 info "Configuring git"
 
-ln -snf $DOTFILES_ROOT/git/.gitconfig ~/.gitconfig
-ln -snf $DOTFILES_ROOT/git/.gitignore ~/.gitignore
+ln -snf $DOTFILES_ROOT/git/gitconfig ~/.gitconfig
+ln -snf $DOTFILES_ROOT/git/gitignore ~/.gitignore
 
 success "Git is configured"
 
