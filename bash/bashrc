@@ -44,6 +44,9 @@ fi
 # Node version manager
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# Pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
 # Fuzzy finder
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
