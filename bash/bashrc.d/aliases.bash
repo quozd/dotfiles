@@ -19,5 +19,6 @@ alias reload="exec $SHELL -l"
 if [ $(uname -s) == 'Darwin' ]; then
   alias vi="/usr/local/bin/vim"
 fi
+
 alias vim="nvim"
 

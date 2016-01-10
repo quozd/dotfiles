@@ -5,7 +5,7 @@ export HISTCONTROL=ignoreboth
 # Keep the times of the commands in history
 export HISTTIMEFORMAT='%F %T  '
 
-export EDITOR='vim';
+export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
