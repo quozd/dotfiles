@@ -6,9 +6,10 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'Shougo/deoplete.nvim'
 "Plug 'itchyny/lightline.vim' " Enchased status line
 
 " HTML support
@@ -22,20 +23,31 @@ Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 
 call plug#end()
 
-let mapleader=","
+"
+" Plugins configuration
+"
+
+" Auto start Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources = {}
+let g:deoplete#sources._ = ['buffer', 'file', 'ultisnips']
 
 " NERDTree configuration
-map <C-n> :NERDTreeToggle<CR>
 let NERDTreeDirArrows=1
 let NERDTreeShowHidden=1
 
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" Split window verticaly on UltiSnipsEdit
+let g:UltiSnipsEditSplit="vertical"
 
-"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"
+" Env variables
+"
+
 let $FZF_DEFAULT_COMMAND='ag -g ""'
+
+"
+" Common settings
+"
 
 set encoding=utf-8
 set autoread
@@ -47,25 +59,21 @@ set cursorline
 set history=1000
 set hidden
 set relativenumber
-
 syntax on
-
 set ignorecase
 set smartcase
 set incsearch
-
 set showmatch
 set noerrorbells
 set novisualbell
 set laststatus=2
 set number
-
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set expandtab
 
 " Display tabs and trailing spaces visually
@@ -88,9 +96,20 @@ let base16colorspace=256
 set background=dark
 colorscheme base16-tomorrow
 
+" Sync " and + registers
+set clipboard=unnamedplus
+
+"
+" Key mappings
+"
+
+" Map leader
+let mapleader=","
+
+" Nerd tree
+map <C-n> :NERDTreeToggle<CR>
+
 " Toggle between line numbers and relative line numbers
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
 nnoremap <silent><leader>u :exe "set " . (&relativenumber == 1 ? "norelativenumber" : "relativenumber")<cr>
 
 " FZF
@@ -103,7 +122,29 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 
-"autocmd BufWritePre * :%s/\s\+$//e " trim whitespace on save
+" Remove search highlight on Enter
+nnoremap <silent> <CR> :nohlsearch<CR><CR>
+
+" Don't loose selection on < or >
+xnoremap <  <gv
+xnoremap >  >gv
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+"
+" Autocmd
+"
+
+" trim whitespace on save
+au BufWritePre * :%s/\s\+$//e
 
 " File types
 au BufRead,BufNewFile *.es6 setfiletype javascript
+
+" Toggle between line numbers and relative line numbers
+au InsertEnter * :set norelativenumber
+au InsertLeave * :set relativenumber
+
