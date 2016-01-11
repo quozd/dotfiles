@@ -18,6 +18,7 @@ Plug 'othree/html5.vim', { 'for': 'html' }
 " Javascript support
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 
 "Plug 'junegunn/vim-easy-align'
 
@@ -31,6 +32,8 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources = {}
 let g:deoplete#sources._ = ['buffer', 'file', 'ultisnips']
+
+let g:deoplete#file#enable_buffer_path = 1
 
 " NERDTree configuration
 let NERDTreeDirArrows=1
