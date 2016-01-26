@@ -1,5 +1,3 @@
-let g:python_host_prog = '~/.pyenv/versions/2.7.10/bin/python'
-
 call plug#begin('~/.config/nvim/plugged')
 
 " General plugins
