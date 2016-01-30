@@ -11,6 +11,7 @@ export PAGER='less'
 
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
+  export LC_ALL='en_US.UTF-8'
 fi
 
 # Set the default Less options.
