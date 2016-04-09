@@ -1,6 +1,7 @@
 [user]
   name = Vitali Fokin
   email = vitali.fokin@gmail.com
+	signingkey = 8E3E2C29
 [credential]
   helper = store
 [push]
@@ -22,3 +23,5 @@
   conflictstyle = diff3
 [mergetool]
   prompt = false
+[commit]
+	gpgsign = true
