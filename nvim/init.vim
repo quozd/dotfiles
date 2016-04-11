@@ -49,6 +49,13 @@ let g:UltiSnipsEditSplit="vertical"
 let $FZF_DEFAULT_COMMAND='ag -g ""'
 
 "
+" Python host config
+"
+
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+"
 " Common settings
 "
 
