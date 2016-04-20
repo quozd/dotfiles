@@ -41,6 +41,10 @@ if [[ -d $HOME/.bashrc.d ]] ; then
   unset -v bashrc
 fi
 
+if [[ -f $HOME/.bashrc_local ]]; then
+  source $HOME/.bashrc_local
+fi
+
 # Node version manager
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
