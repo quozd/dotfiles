@@ -85,6 +85,9 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+bindsym $mod+plus exec amixer -q set Master 2dB+ unmute
+bindsym $mod+minus exec amixer -q set Master 2dB- unmute
+
 # focus the child container
 #bindsym $mod+d focus child
 
@@ -163,6 +166,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status -c ~/.i3/i3status.conf
+        tray_output none
         position top
 
         colors {
@@ -185,3 +189,4 @@ client.unfocused         #282a2e  #373F45  #c7c7c7  #354347
 client.urgent            #282a2e  #ae4544  #f9f9f9  #ae4544
 
 exec --no-startup-id "setxkbmap -option grp:alt_space_toggle -option ctrl:swapcaps -layout us,ru"
+exec --no-startup-id "compton --backend glx"
