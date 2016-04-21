@@ -131,7 +131,7 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # lock
-bindsym $mod+Escape exec i3lock
+bindsym $mod+Escape exec "~/bin/lock.sh"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
