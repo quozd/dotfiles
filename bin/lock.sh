@@ -11,5 +11,5 @@ scrot $fscrn
 gm mogrify -scale 10% -scale 1000% $fscrn
 #gm mogrify -scale 10% -scale $(identify -format "%wx%h" $fscrn)\! $fscrn
 
-i3lock -ui $fscrn
+i3lock -dui $fscrn
 rm $fscrn
