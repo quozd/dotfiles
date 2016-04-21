@@ -1,0 +1,7 @@
+[options]
+font = Menlo Regular 11
+
+urgent_on_bell = true
+crollback_lines = 10000
+mouse_autohide = true
+dynamic_title = true
