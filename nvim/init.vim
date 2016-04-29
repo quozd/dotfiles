@@ -38,6 +38,7 @@ let g:deoplete#file#enable_buffer_path = 1
 " NERDTree configuration
 let NERDTreeDirArrows=1
 let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.pyc$']
 
 " Split window verticaly on UltiSnipsEdit
 let g:UltiSnipsEditSplit="vertical"
@@ -138,6 +139,9 @@ nnoremap <silent> <CR> :nohlsearch<CR><CR>
 " Don't loose selection on < or >
 xnoremap <  <gv
 xnoremap >  >gv
+
+" Normal mode for terminal
+:tnoremap <Esc> <C-\><C-n>
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
