@@ -105,7 +105,7 @@ set $workspace6 6
 set $workspace7 7
 set $workspace8 8 spotify
 set $workspace9 9 mail
-set $workspace10 10 skype
+set $workspace10 10 im
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
