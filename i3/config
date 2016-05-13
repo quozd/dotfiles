@@ -212,3 +212,4 @@ client.urgent            #282a2e  #ae4544  #f9f9f9  #ae4544
 exec --no-startup-id "setxkbmap -option grp:alt_space_toggle -option ctrl:swapcaps -layout us,ru"
 exec --no-startup-id "compton --backend glx"
 exec --no-startup-id "gpg-agent --daemon"
+exec --no-startup-id "feh --bg-fill ~/Pictures/wallpapper.png"
