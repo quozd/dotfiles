@@ -96,16 +96,32 @@ bindsym $mod+plus exec pactl set-sink-volume 1 +5%
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 1 shell
-set $workspace2 2 web
+set $workspace1 1
+set $workspace2 2
 set $workspace3 3
 set $workspace4 4
 set $workspace5 5
 set $workspace6 6
 set $workspace7 7
-set $workspace8 8 spotify
-set $workspace9 9 mail
-set $workspace10 10 im
+set $workspace8 8
+set $workspace9 9
+set $workspace10 10
+
+workspace $workspace1 output DVI-I-1
+workspace $workspace2 output DVI-I-1
+workspace $workspace3 output DVI-I-1
+workspace $workspace4 output DVI-I-1
+workspace $workspace8 output HDMI-1
+workspace $workspace9 output HDMI-1
+workspace $workspace10 output HDMI-1
+
+# worksace assignment
+assign [class="^Firefox$"] $workspace9
+assign [class="^google-chrome$"] $workspace9
+assign [class="^Skype$"] $workspace10
+assign [class="^slack$"] $workspace10
+assign [class="^Telegram$"] $workspace10
+assign [class="^spotify$"] $workspace8
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
