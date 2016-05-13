@@ -47,6 +47,7 @@ let g:UltiSnipsEditSplit="vertical"
 " Env variables
 "
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $FZF_DEFAULT_COMMAND='ag -g ""'
 
 "
