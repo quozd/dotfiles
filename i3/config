@@ -26,7 +26,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec termite
+#bindsym $mod+Return exec termite
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -209,6 +210,7 @@ client.focused_inactive  #282a2e  #3b444a  #c7c7c7  #205360
 client.unfocused         #282a2e  #373F45  #c7c7c7  #354347
 client.urgent            #282a2e  #ae4544  #f9f9f9  #ae4544
 
+exec --no-startup-id "nm-applet"
 exec --no-startup-id "setxkbmap -option grp:alt_space_toggle -option ctrl:swapcaps -layout us,ru"
 exec --no-startup-id "compton --backend glx"
 exec --no-startup-id "gpg-agent --daemon"

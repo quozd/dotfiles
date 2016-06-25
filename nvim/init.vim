@@ -10,7 +10,6 @@ Plug 'SirVer/ultisnips'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim'
-"Plug 'itchyny/lightline.vim' " Enchased status line
 
 " HTML support
 Plug 'othree/html5.vim', { 'for': 'html' }
@@ -19,6 +18,9 @@ Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+
+" Python support
+Plug 'hdima/python-syntax', { 'for': 'python' }
 
 "Plug 'junegunn/vim-easy-align'
 
@@ -42,6 +44,9 @@ let NERDTreeIgnore = ['\.pyc$']
 
 " Split window verticaly on UltiSnipsEdit
 let g:UltiSnipsEditSplit="vertical"
+
+" Python syntax
+let python_highlight_all=1
 
 "
 " Env variables
@@ -88,6 +93,8 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 set scrolloff=5
+set foldmethod=indent
+set foldlevel=99
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
