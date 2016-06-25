@@ -23,3 +23,5 @@ export NVM_DIR=~/.nvm
 
 export BASE16_THEME="tomorrow.dark"
 export BASE16_SHELL="$HOME/.config/base16-shell/base16-${BASE16_THEME}.sh"
+
+export GOPATH=$HOME/Development/go

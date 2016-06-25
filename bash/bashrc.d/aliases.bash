@@ -21,4 +21,4 @@ if [ $(uname -s) == 'Darwin' ]; then
 fi
 
 alias vim="nvim"
-
+alias mux="tmuxinator"
