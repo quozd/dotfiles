@@ -47,7 +47,7 @@ let g:UltiSnipsEditSplit="vertical"
 " Env variables
 "
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $FZF_DEFAULT_COMMAND='ag -g ""'
 
 "
@@ -87,6 +87,7 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set expandtab
+set scrolloff=5
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
