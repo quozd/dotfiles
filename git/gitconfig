@@ -22,6 +22,9 @@
   conflictstyle = diff3
 [mergetool]
   prompt = false
+[mergetool "vimdiff"]
+  path = nvim
+  cmd = nvim -d -c \"wincmd l\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
 [commit]
   gpgsign = true
 [include]
