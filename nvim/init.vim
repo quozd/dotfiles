@@ -48,6 +48,9 @@ let g:UltiSnipsEditSplit="vertical"
 " Python syntax
 let python_highlight_all=1
 
+" Javscript syntax
+let g:javascript_plugin_jsdoc = 1
+
 "
 " Env variables
 "
@@ -148,9 +151,6 @@ nnoremap <silent> <CR> :nohlsearch<CR><CR>
 " Don't loose selection on < or >
 xnoremap <  <gv
 xnoremap >  >gv
-
-" Normal mode for terminal
-:tnoremap <Esc> <C-\><C-n>
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
