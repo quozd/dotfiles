@@ -56,3 +56,6 @@ if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
 
 # Base16 colors
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# Virtualenv wrapper
+source /usr/local/bin/virtualenvwrapper.sh
