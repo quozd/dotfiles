@@ -10,6 +10,7 @@ Plug 'SirVer/ultisnips'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim'
+Plug 'benekastah/neomake'
 
 " HTML support
 Plug 'othree/html5.vim', { 'for': 'html' }
@@ -50,6 +51,15 @@ let python_highlight_all=1
 
 " Javscript syntax
 let g:javascript_plugin_jsdoc = 1
+
+" Neomake
+let g:neomake_open_list = 2
+
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+let g:neomake_javascript_eslint_exe=substitute(g:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+
+let g:neomake_python_enable_makers = ['pylint']
 
 "
 " Env variables
@@ -164,10 +174,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " trim whitespace on save
 au BufWritePre * :%s/\s\+$//e
 
-" File types
-au BufRead,BufNewFile *.es6 setfiletype javascript
-
 " Toggle between line numbers and relative line numbers
 au InsertEnter * :set norelativenumber
 au InsertLeave * :set relativenumber
+
+" Run neomake after buf write
+autocmd! BufWritePost * Neomake
 
