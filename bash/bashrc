@@ -46,7 +46,7 @@ if [[ -f $HOME/.bashrc_local ]]; then
 fi
 
 # Node version manager
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use
 
 # Pyenv
 if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
