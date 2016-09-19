@@ -53,7 +53,11 @@ let python_highlight_all=1
 let g:javascript_plugin_jsdoc = 1
 
 " Neomake
-let g:neomake_open_list = 2
+"let g:neomake_open_list = 2
+let g:neomake_error_sign = {'text': 'E', 'texthl': 'NeomakeErrorSign'}
+let g:neomake_warning_sign = {'text': 'W', 'texthl': 'NeomakeWarningSign'}
+let g:neomake_message_sign = {'text': '>', 'texthl': 'NeomakeMessageSign'}
+let g:neomake_info_sign = {'text': 'i', 'texthl': 'NeomakeInfoSign'}
 
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
@@ -78,6 +82,8 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 "
 " Common settings
 "
+
+set termguicolors
 
 set encoding=utf-8
 set autoread
