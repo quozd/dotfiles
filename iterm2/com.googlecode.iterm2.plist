@@ -7,7 +7,7 @@
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
 	<key>AllowClipboardAccess</key>
-	<false/>
+	<true/>
 	<key>AnimateDimming</key>
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -1220,7 +1220,7 @@
 	<key>HideScrollbar</key>
 	<true/>
 	<key>HideTab</key>
-	<true/>
+	<false/>
 	<key>HideTabCloseButton</key>
 	<false/>
 	<key>HideTabNumber</key>
@@ -1242,7 +1242,7 @@
 	<key>IRMemory</key>
 	<integer>4</integer>
 	<key>JobName</key>
-	<true/>
+	<false/>
 	<key>LeftCommand</key>
 	<integer>7</integer>
 	<key>LeftOption</key>
@@ -1294,9 +1294,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>350 288 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>305 327 770 381 0 0 1280 800 </string>
+	<string>166 293 1018 447 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>117 115 1130 503 0 0 1280 777 </string>
+	<string>141 111 970 503 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1517,7 +1517,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Disable Printing</key>
@@ -1856,7 +1856,7 @@
 			<key>Place Prompt at First Column</key>
 			<true/>
 			<key>Prompt Before Closing 2</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
@@ -2064,7 +2064,7 @@
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PassOnControlClick</key>
@@ -2125,12 +2125,14 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-08-09T09:31:28Z</date>
+	<date>2016-09-14T12:56:38Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
+	<true/>
+	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
 	<true/>
@@ -2175,6 +2177,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.5</string>
+	<string>3.0.9</string>
 </dict>
 </plist>
