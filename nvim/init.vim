@@ -11,6 +11,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'benekastah/neomake'
+Plug 'mhinz/vim-grepper'
 
 " HTML support
 Plug 'othree/html5.vim', { 'for': 'html' }
@@ -40,6 +41,9 @@ let g:deoplete#file#enable_buffer_path = 1
 
 " NERDTree configuration
 let NERDTreeDirArrows=1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeWinSize = 50
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc$']
 
@@ -143,7 +147,7 @@ set clipboard=unnamedplus
 "
 
 " Map leader
-let mapleader=","
+let mapleader="\<space>"
 
 " Nerd tree
 map <C-n> :NERDTreeToggle<CR>
@@ -172,6 +176,9 @@ xnoremap >  >gv
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Grepper
+nnoremap <leader>p :Grepper<cr>
 
 "
 " Autocmd
