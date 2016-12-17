@@ -12,6 +12,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'benekastah/neomake'
 Plug 'mhinz/vim-grepper'
+Plug 'FooSoft/vim-argwrap'
 
 " HTML support
 Plug 'othree/html5.vim', { 'for': 'html' }
@@ -23,6 +24,8 @@ Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 
 " Python support
 Plug 'hdima/python-syntax', { 'for': 'python' }
+Plug 'zchee/deoplete-jedi', { 'for': 'python' }
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
 "Plug 'junegunn/vim-easy-align'
 
@@ -34,8 +37,6 @@ call plug#end()
 
 " Auto start Deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources = {}
-let g:deoplete#sources._ = ['buffer', 'file', 'ultisnips']
 
 let g:deoplete#file#enable_buffer_path = 1
 
@@ -45,7 +46,7 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeWinSize = 50
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 " Split window verticaly on UltiSnipsEdit
 let g:UltiSnipsEditSplit="vertical"
@@ -55,6 +56,9 @@ let python_highlight_all=1
 
 " Javscript syntax
 let g:javascript_plugin_jsdoc = 1
+
+" JSX
+let g:jsx_ext_required = 0
 
 " Neomake
 "let g:neomake_open_list = 2
@@ -68,6 +72,15 @@ let g:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
 let g:neomake_javascript_eslint_exe=substitute(g:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 
 let g:neomake_python_enable_makers = ['pylint']
+
+let g:neomake_verbose = -1
+
+" ArgWrap
+let g:argwrap_tail_comma_braces = '['
+
+" Jedi
+let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#completions_enabled = 0
 
 "
 " Env variables
@@ -150,7 +163,8 @@ set clipboard=unnamedplus
 let mapleader="\<space>"
 
 " Nerd tree
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <silent><leader>f :NERDTreeFind<cr>
 
 " Toggle between line numbers and relative line numbers
 nnoremap <silent><leader>u :exe "set " . (&relativenumber == 1 ? "norelativenumber" : "relativenumber")<cr>
@@ -180,6 +194,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Grepper
 nnoremap <leader>p :Grepper<cr>
 
+" ArgWrap
+nnoremap <silent> <leader>w :ArgWrap<CR>
+
 "
 " Autocmd
 "
@@ -193,4 +210,6 @@ au InsertLeave * :set relativenumber
 
 " Run neomake after buf write
 autocmd! BufWritePost * Neomake
+
+autocmd FileType python setlocal completeopt-=preview
 
