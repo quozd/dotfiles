@@ -22,3 +22,4 @@ fi
 
 alias vim="nvim"
 alias mux="tmuxinator"
+alias brwe="brew"
