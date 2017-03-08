@@ -1,8 +1,0 @@
-[options]
-font = Droid Sans Mono 11
-
-urgent_on_bell = true
-scrollback_lines = 1000000
-mouse_autohide = true
-dynamic_title = true
-allow_bold = false

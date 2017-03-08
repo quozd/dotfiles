@@ -1,7 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " General plugins
-Plug 'quozd/base16-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -13,6 +12,8 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'benekastah/neomake'
 Plug 'mhinz/vim-grepper'
 Plug 'FooSoft/vim-argwrap'
+Plug 'sjl/badwolf'
+Plug 'tomasr/molokai'
 
 " HTML support
 Plug 'othree/html5.vim', { 'for': 'html' }
@@ -79,7 +80,7 @@ let g:neomake_verbose = -1
 let g:argwrap_tail_comma_braces = '['
 
 " Jedi
-let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#use_splits_not_buffers = 0
 let g:jedi#completions_enabled = 0
 
 "
@@ -132,6 +133,9 @@ set scrolloff=5
 set foldmethod=indent
 set foldlevel=99
 
+" instant feedback for find & replace
+set inccommand=split
+
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
@@ -148,9 +152,10 @@ set nowb
 set noswapfile
 
 " set colorscheme
-let base16colorspace=256
 set background=dark
-colorscheme base16-tomorrow
+"let g:hybrid_reduced_contrast = 1
+colorscheme badwolf
+
 
 " Sync " and + registers
 set clipboard=unnamedplus

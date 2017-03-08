@@ -22,11 +22,3 @@ fi
 export LESS='-F -g -i -M -R -S -w -X -z-4'
 
 export NVM_DIR=~/.nvm
-
-export BASE16_THEME="tomorrow-night"
-export BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-${BASE16_THEME}.sh"
-
-export GOPATH=$HOME/Development/go
-export GOBIN=$GOPATH/bin
-
-export WORKON_HOME=$HOME/.virtualenvs

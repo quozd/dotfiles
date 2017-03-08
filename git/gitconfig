@@ -4,7 +4,7 @@
 [credential]
   helper = store
 [push]
-  default = simple
+	default = current
 [core]
   excludesfile = ~/.gitignore
   editor = nvim
@@ -27,5 +27,14 @@
   cmd = nvim -d -c \"wincmd l\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
 [commit]
   gpgsign = true
+	verbose = true
 [include]
   path = ~/.gitconfig_local
+[diff]
+	indentHeuristic = true
+[submodule]
+	fetchJobs = 4
+[rebase]
+	autostash = true
+[stash]
+	showPatch = true
