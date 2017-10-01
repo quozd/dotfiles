@@ -1,12 +1,12 @@
 [user]
-  name = Vitali Fokin
-  email = vitali.fokin@gmail.com
+	name = Vitali Fokin
+	email = vitali.fokin@gmail.com
 [credential]
   helper = store
 [push]
 	default = current
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/vitali_fokin/.gitignore
   editor = nvim
 [alias]
   co = checkout
@@ -26,8 +26,9 @@
   path = nvim
   cmd = nvim -d -c \"wincmd l\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
 [commit]
-  gpgsign = true
-	verbose = true
+;  gpgsign = true
+	;verbose = true
+   ; template = /Users/vitali_fokin/.stCommitMsg
 [include]
   path = ~/.gitconfig_local
 [diff]
@@ -38,3 +39,9 @@
 	autostash = true
 [stash]
 	showPatch = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
