@@ -20,6 +20,6 @@ if [ $(uname -s) == 'Darwin' ]; then
   alias vi="/usr/local/bin/vim"
 fi
 
-alias vim="nvim"
+alias vim="vim"
 alias mux="tmuxinator"
 alias brwe="brew"
