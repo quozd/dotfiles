@@ -1,47 +1,38 @@
 [user]
-	name = Vitali Fokin
-	email = vitali.fokin@gmail.com
+    name = Vitali Fokin
+    email = vitali.fokin@gmail.com
 [credential]
-  helper = store
+    helper = store
 [push]
-	default = current
+    default = current
 [core]
-	excludesfile = /Users/vitali_fokin/.gitignore
-  editor = vim
+    excludesfile = /Users/vitali_fokin/.gitignore
+    editor = vim
 [alias]
-  co = checkout
-  st = status
-  c = commit
+    co = checkout
+    st = status
+    c = commit
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
 [merge]
-  tool = vimdiff
-  conflictstyle = diff3
+    tool = vimdiff
+    conflictstyle = diff3
 [mergetool]
-  prompt = false
-[mergetool "vimdiff"]
-  path = nvim
-  cmd = nvim -d -c \"wincmd l\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+    prompt = false
 [commit]
-;  gpgsign = true
-	;verbose = true
-   ; template = /Users/vitali_fokin/.stCommitMsg
+    ;gpgsign = true
+    ;verbose = true
+    ;template = /Users/vitali_fokin/.stCommitMsg
 [include]
-  path = ~/.gitconfig_local
+    path = ~/.gitconfig_local
 [diff]
-	indentHeuristic = true
+    indentHeuristic = true
 [submodule]
-	fetchJobs = 4
+    fetchJobs = 4
 [rebase]
-	autostash = true
+    autostash = true
 [stash]
-	showPatch = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    showPatch = true

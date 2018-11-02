@@ -2,24 +2,17 @@
 
 Configuration files for:
 
-* Neovim
-* Vim (very basic config without plugins)
+* Vim
 * Tmux
 * Bash
-* Shell colors
+* Fish
 * Git
-* iTerm2 (`install.sh` won't do anything with it)
+* iTerm2
+* input
 
 ## Installation
 ```
-git clone --recursive https://github.com/quozd/dotfiles ~/.dotfiles
-cd ~/.dotfiles
-./install.sh
-```
-
-## Updating
-```
-git pull && git submodule update --init --recursive
+git clone https://github.com/quozd/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 ./install.sh
 ```
