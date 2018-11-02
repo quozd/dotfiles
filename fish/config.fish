@@ -10,4 +10,4 @@ abbr mux="tmuxinator"
 test -e $HOME/.fishrc_local; and . $HOME/.fishrc_local
 
 # Iterm2 shell integration
-# test -e $HOME/.iterm2_shell_integration.fish; and . $HOME/.iterm2_shell_integration.fish
+test -e $HOME/.iterm2_shell_integration.fish; and . $HOME/.iterm2_shell_integration.fish
