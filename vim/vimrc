@@ -49,3 +49,7 @@ map <C-K> <C-W>k
 map <C-L> <C-W>l
 
 autocmd BufWritePre * :%s/\s\+$//e " trim whitespace on save
+
+" no red colorcolumn
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+

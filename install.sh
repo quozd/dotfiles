@@ -20,7 +20,7 @@ ln -snf $DOTFILES_ROOT/bash/bashrc ~/.bashrc
 ln -snf $DOTFILES_ROOT/bash/bash_profile ~/.bash_profile
 
 mkdir -p ~/.config/fish
-ln -snf $DOTFILES_ROOT/fish/config ~/.config/fish/config.fish
+ln -snf $DOTFILES_ROOT/fish/config.fish ~/.config/fish/config.fish
 ln -snf $DOTFILES_ROOT/fish/functions ~/.config/fish/functions
 
 unset DOTFILES_ROOT
