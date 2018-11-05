@@ -23,5 +23,7 @@ mkdir -p ~/.config/fish
 ln -snf $DOTFILES_ROOT/fish/config.fish ~/.config/fish/config.fish
 ln -snf $DOTFILES_ROOT/fish/functions ~/.config/fish/functions
 
+ln -snf $DOTFILES_ROOT/idea/ideavimrc ~/.ideavimrc
+
 unset DOTFILES_ROOT
 unset PLATFORM
