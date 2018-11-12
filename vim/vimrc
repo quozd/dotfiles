@@ -37,6 +37,8 @@ set noswapfile
 
 set background=dark
 
+set clipboard+=unnamed
+
 " Toggle between line numbers and relative line numbers
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber

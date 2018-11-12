@@ -14,3 +14,4 @@ set novisualbell
 set laststatus=2
 set scrolloff=5
 
+set clipboard+=unnamed
