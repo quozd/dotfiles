@@ -1,6 +1,6 @@
 [user]
-    name = Vitali Fokin
-    email = vitali.fokin@gmail.com
+	name = Vitali Fokin
+	email = vitali.fokin@gmail.com
 [credential]
     helper = store
 [push]
@@ -22,6 +22,8 @@
     conflictstyle = diff3
 [mergetool]
     prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
 [commit]
     ;gpgsign = true
     ;verbose = true
@@ -30,6 +32,8 @@
     path = ~/.gitconfig_local
 [diff]
     indentHeuristic = true
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [submodule]
     fetchJobs = 4
 [rebase]

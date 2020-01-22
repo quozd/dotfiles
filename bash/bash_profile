@@ -1,2 +1,4 @@
 # Source interactive Bash config if it exists
 test -e "${HOME}/.bashrc" && source "${HOME}/.bashrc"
+
+export PATH="$HOME/.poetry/bin:$PATH"
