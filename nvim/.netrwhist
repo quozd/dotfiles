@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
-let g:netrw_dirhist_5='/Users/vitali_fokin/Development/astrazeneca/portal-search/vendor/cgr-portal-shared/src'
-let g:netrw_dirhist_4='/Users/vitali_fokin/Development/astrazeneca/portal-phewas/etc/liquibase'
-let g:netrw_dirhist_3='/Users/vitali_fokin/Development/astrazeneca/portal-phewas/src/portal_phewas_app'
-let g:netrw_dirhist_2='/Users/vitali_fokin/Development/astrazeneca/portal-phewas/src/portal-phewas-generator'
-let g:netrw_dirhist_1='/Users/vitali_fokin/Development/astrazeneca/portal-automation/src/portal_automation/containers'
