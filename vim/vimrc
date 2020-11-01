@@ -27,6 +27,7 @@ set nowrap
 set showmode
 set cursorline
 set relativenumber
+set mouse=a
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
@@ -36,6 +37,8 @@ set nowb
 set noswapfile
 
 set background=dark
+
+set clipboard+=unnamed
 
 " Toggle between line numbers and relative line numbers
 autocmd InsertEnter * :set norelativenumber
@@ -48,8 +51,19 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 
+" Remove search highlight on Enter
+nnoremap <silent> <CR> :nohlsearch<CR><CR>
+
 autocmd BufWritePre * :%s/\s\+$//e " trim whitespace on save
 
 " no red colorcolumn
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
+" netrw
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 25
+
+hi CursorLine   cterm=NONE ctermbg=67 ctermfg=NONE
+highlight ColorColumn ctermbg=67
