@@ -2,7 +2,7 @@
 	name = Vitali Fokin
 	email = vitali.fokin@gmail.com
 [credential]
-    helper = store
+	helper = store
 [push]
     default = current
 [core]

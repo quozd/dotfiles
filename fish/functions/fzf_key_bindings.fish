@@ -1,0 +1,1 @@
+/Users/vitali_fokin/.fzf/shell/key-bindings.fish

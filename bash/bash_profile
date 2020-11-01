@@ -2,3 +2,4 @@
 test -e "${HOME}/.bashrc" && source "${HOME}/.bashrc"
 
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
