@@ -2,7 +2,7 @@
 	name = Vitali Fokin
 	email = vitali.fokin@gmail.com
 [credential]
-	helper = store
+	helper = osxkeychain
 [push]
     default = current
 [core]
@@ -40,3 +40,5 @@
     autostash = true
 [stash]
     showPatch = true
+[pull]
+	ff = only

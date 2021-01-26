@@ -110,6 +110,9 @@ xnoremap >  >gv
 " Remove search highlight on Enter
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 
+" Terminal
+:tnoremap <Esc> <C-\><C-n>
+
 "
 " Commands
 "
