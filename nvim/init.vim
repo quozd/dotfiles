@@ -12,6 +12,9 @@ Plug 'airblade/vim-gitgutter'
 " Python syntax
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
+" Syntx
+Plug 'jvirtanen/vim-hcl'
+
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
