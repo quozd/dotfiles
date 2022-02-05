@@ -13,7 +13,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 " Syntx
-Plug 'jvirtanen/vim-hcl'
+Plug 'hashivim/vim-terraform'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
