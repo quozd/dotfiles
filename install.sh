@@ -16,12 +16,8 @@ ln -snf $DOTFILES_ROOT/tmux/tmux.conf ~/.tmux.conf
 ln -snf $DOTFILES_ROOT/git/gitconfig ~/.gitconfig
 ln -snf $DOTFILES_ROOT/git/gitignore ~/.gitignore
 
-ln -snf $DOTFILES_ROOT/bash/bashrc ~/.bashrc
-ln -snf $DOTFILES_ROOT/bash/bash_profile ~/.bash_profile
-
 mkdir -p ~/.config/fish
 ln -snf $DOTFILES_ROOT/fish/config.fish ~/.config/fish/config.fish
-ln -snf $DOTFILES_ROOT/fish/functions ~/.config/fish/functions
 
 ln -snf $DOTFILES_ROOT/idea/ideavimrc ~/.ideavimrc
 

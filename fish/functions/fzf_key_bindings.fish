@@ -1,1 +1,0 @@
-/Users/quozd/.fzf/shell/key-bindings.fish
