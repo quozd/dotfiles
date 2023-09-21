@@ -1,0 +1,115 @@
+env:
+  TERM: "xterm-256color"
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+mouse:
+  hide_when_typing: true
+
+font:
+  normal:
+    # family: "DejaVuSansM Nerd Font"
+    family: "DejaVu Sans Mono"
+  bold:
+    family: "DejaVu Sans Mono"
+    style: "Book"
+  italic:
+    family: "DejaVu Sans Mono"
+    style: "Book"
+  bold_italic:
+    family: "DejaVu Sans Mono"
+    style: "Book"
+
+  size: 14
+
+shell:
+  program: /opt/homebrew/bin/fish
+  args:
+    - --login
+
+window:
+  dimensions:
+    columns: 170
+    lines: 48
+
+  padding:
+    x: 5
+    y: 5
+
+  decorations: full
+  option_as_alt: Both
+
+working_directory: ./Development
+
+hints:
+  enabled:
+    # Only open URLs on Cmd + click
+    - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
+              [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+      command: open
+      post_processing: true
+      mouse:
+        enabled: true
+        mods: Command
+
+# TokyoNight Alacritty Colors
+colors:
+  # Default colors
+  primary:
+    background: '0x222436'
+    foreground: '0xc8d3f5'
+
+  # Normal colors
+  normal:
+    black:   '0x1b1d2b'
+    red:     '0xff757f'
+    green:   '0xc3e88d'
+    yellow:  '0xffc777'
+    blue:    '0x82aaff'
+    magenta: '0xc099ff'
+    cyan:    '0x86e1fc'
+    white:   '0x828bb8'
+
+  # Bright colors
+  bright:
+    black:   '0x444a73'
+    red:     '0xff757f'
+    green:   '0xc3e88d'
+    yellow:  '0xffc777'
+    blue:    '0x82aaff'
+    magenta: '0xc099ff'
+    cyan:    '0x86e1fc'
+    white:   '0xc8d3f5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff966c' }
+    - { index: 17, color: '0xc53b53' }
+
+key_bindings:
+  - { key: P, mods: Command, chars: "\x02s" } # session manager
+  - { key: D, mods: Command, chars: "\x02\"" } # split tmux window vertically
+  - { key: E, mods: Command, chars: "\x02%" } # split tmux window horizontally
+  - { key: F, mods: Command|Shift, chars: "\x02\x5b\x2f" } # start tmux search mode
+  - { key: T, mods: Command, chars: "\x02c" } # create a new tmux window
+  - { key: RBracket, mods: Command|Shift, chars: "\x02n" } # next window
+  - { key: LBracket, mods: Command|Shift, chars: "\x02p" } # prev window
+  - { key: W, mods: Command, chars: "\x02x" } # kill the current pane
+  - { key: Z, mods: Command, chars: "\x02z" } # toggle zoom state of the current tmux pane
+  - { key: Comma, mods: Command, chars: "\x02," } # rename the current tmux window
+  - { key: Semicolon, mods: Command, chars: "\x02:" } # enter the tmux command prompt
+  - { key: Key1, mods: Command, chars: "\x021" } # select tmux window 1
+  - { key: Key2, mods: Command, chars: "\x022" } #                ... 2
+  - { key: Key3, mods: Command, chars: "\x023" } #                ... 3
+  - { key: Key4, mods: Command, chars: "\x024" } #                ... 4
+  - { key: Key5, mods: Command, chars: "\x025" } #                ... 5
+  - { key: Key6, mods: Command, chars: "\x026" } #                ... 6
+  - { key: Key7, mods: Command, chars: "\x027" } #                ... 7
+  - { key: Key8, mods: Command, chars: "\x028" } #                ... 8
+  - { key: Key9, mods: Command, chars: "\x029" } #
+  - { key: H, mods: Alt, chars: "\x02\x1b\x5b\x44"}
+  - { key: J, mods: Alt, chars: "\x02\x1b\x5b\x42"}
+  - { key: K, mods: Alt, chars: "\x02\x1b\x5b\x41"}
+  - { key: L, mods: Alt, chars: "\x02\x1b\x5b\x43"}
+
