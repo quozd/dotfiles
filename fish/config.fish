@@ -8,6 +8,7 @@ set -x EDITOR vim
 if type -q nvim nvim
     set -x EDITOR nvim
     abbr v "nvim"
+    abbr vi "nvim"
 end
 
 if test -e /opt/homebrew/bin
@@ -29,6 +30,17 @@ end
 
 if type -q docker
     abbr dc "docker compose"
+end
+
+if type -q nerdctl
+    abbr n "nerdctl"
+    abbr nc "nerdctl compose"
+end
+
+if type -q colima
+    abbr c "colima"
+    abbr cn "colima nerdctl"
+    abbr cnc "colima nerdctl compose"
 end
 
 if type -q kubectl
