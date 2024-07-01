@@ -29,6 +29,7 @@ if test -e $HOME/.cargo/bin
 end
 
 if type -q docker
+    abbr d "docker"
     abbr dc "docker compose"
 end
 

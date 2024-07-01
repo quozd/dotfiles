@@ -19,5 +19,8 @@ ln -snf $DOTFILES_ROOT/git/gitignore ~/.gitignore
 mkdir -p ~/.config/fish
 ln -snf $DOTFILES_ROOT/fish/config.fish ~/.config/fish/config.fish
 
+mkdir -p ~/.config/alacritty
+ln -snf $DOTFILES_ROOT/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+
 unset DOTFILES_ROOT
 unset PLATFORM
