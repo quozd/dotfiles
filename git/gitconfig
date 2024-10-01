@@ -18,10 +18,12 @@
     branch = auto
     ui = true
 [merge]
-    tool = vimdiff
+    tool = nvimdiff
     conflictstyle = diff3
 [mergetool]
     prompt = false
+[mergetool "nvimdiff"]
+    layout = "LOCAL,BASE,REMOTE / MERGED"
 [commit]
     ;gpgsign = true
     ;verbose = true
