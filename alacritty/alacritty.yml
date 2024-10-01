@@ -22,10 +22,10 @@ font:
     family: "DejaVu Sans Mono"
     style: "Book"
 
-  size: 14
+  size: 12
 
 shell:
-  program: /opt/homebrew/bin/fish
+  program: /bin/fish
   args:
     - --login
 
@@ -38,10 +38,12 @@ window:
     x: 5
     y: 5
 
-  decorations: full
+      #decorations: None
+    #startup_mode: Maximized
   option_as_alt: Both
+  decorations_theme_variant: Dark
 
-working_directory: ./Development
+working_directory: ./Projects
 
 hints:
   enabled:
@@ -112,4 +114,5 @@ key_bindings:
   - { key: J, mods: Alt, chars: "\x02\x1b\x5b\x42"}
   - { key: K, mods: Alt, chars: "\x02\x1b\x5b\x41"}
   - { key: L, mods: Alt, chars: "\x02\x1b\x5b\x43"}
+  - { key: F11, action: ToggleFullscreen}
 
