@@ -1,0 +1,210 @@
+working_directory = "./Development"
+
+[[colors.indexed_colors]]
+color = "0xff966c"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xc53b53"
+index = 17
+
+[colors.bright]
+black = "0x444a73"
+blue = "0x82aaff"
+cyan = "0x86e1fc"
+green = "0xc3e88d"
+magenta = "0xc099ff"
+red = "0xff757f"
+white = "0xc8d3f5"
+yellow = "0xffc777"
+
+[colors.normal]
+black = "0x1b1d2b"
+blue = "0x82aaff"
+cyan = "0x86e1fc"
+green = "0xc3e88d"
+magenta = "0xc099ff"
+red = "0xff757f"
+white = "0x828bb8"
+yellow = "0xffc777"
+
+[colors.primary]
+background = "0x222436"
+foreground = "0xc8d3f5"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14
+
+[font.bold]
+family = "DejaVu Sans Mono"
+style = "Book"
+
+[font.bold_italic]
+family = "DejaVu Sans Mono"
+style = "Book"
+
+[font.italic]
+family = "DejaVu Sans Mono"
+style = "Book"
+
+[font.normal]
+family = "DejaVu Sans Mono"
+
+[[hints.enabled]]
+command = "open"
+post_processing = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002s"
+key = "P"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\""
+key = "D"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002%"
+key = "E"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002[/"
+key = "F"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002c"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002n"
+key = "RBracket"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002p"
+key = "LBracket"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002x"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002z"
+key = "Z"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002,"
+key = "Comma"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002:"
+key = "Semicolon"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00021"
+key = "Key1"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00022"
+key = "Key2"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00023"
+key = "Key3"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00024"
+key = "Key4"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00025"
+key = "Key5"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00026"
+key = "Key6"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00027"
+key = "Key7"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00028"
+key = "Key8"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00029"
+key = "Key9"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\u001B[D"
+key = "H"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u0002\u001B[B"
+key = "J"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u0002\u001B[A"
+key = "K"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u0002\u001B[C"
+key = "L"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[shell]
+program = "/opt/homebrew/bin/fish"
+args = ["--login"]
+
+[window]
+decorations_theme_variant = "Dark"
+option_as_alt = "Both"
+
+[window.dimensions]
+columns = 170
+lines = 48
+
+[window.padding]
+x = 5
+y = 5

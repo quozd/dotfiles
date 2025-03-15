@@ -22,7 +22,7 @@ font:
     family: "DejaVu Sans Mono"
     style: "Book"
 
-  size: 12
+  size: 14
 
 shell:
   program: /bin/fish
