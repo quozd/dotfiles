@@ -1,43 +1,117 @@
 [user]
-	name = Vitali Fokin
-	email = vitali.fokin@fairmarkit.com
-[credential]
-	helper = osxkeychain
+    name = Vitali Fokin
+    email = vitali.fokin@gmail.com
+
 [push]
     default = current
+
 [core]
     excludesfile = ~/.gitignore
     editor = nvim
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
 [alias]
     co = checkout
     st = status
     c = commit
+
 [color]
     diff = auto
     status = auto
     branch = auto
     ui = true
+
 [merge]
-    tool = nvimdiff
-    conflictstyle = diff3
-[mergetool]
-    prompt = false
-[mergetool "nvimdiff"]
-    layout = "LOCAL,BASE,REMOTE / MERGED"
+    tool = nvim
+    conflictstyle = zdiff3
+
 [commit]
     ;gpgsign = true
-    ;verbose = true
+    verbose = true
+
 [include]
     path = ~/.gitconfig_local
+
 [diff]
+    algorithm = histogram
     indentHeuristic = true
+    mnemonicPrefix = true
+    renames = true
+    context = 10
+
 [submodule]
     fetchJobs = 4
+
 [rebase]
     autostash = true
+    autosquash = true
+    updateRefs = true
+    missingCommitsCheck = error
+
 [stash]
     showPatch = true
+
 [pull]
-	ff = only
+    ff = only
+
 [init]
-	defaultBranch = master
+    defaultBranch = master
+
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+
+[branch]
+    autosetupmerge = always
+    autosetuprebase = always
+    sort = -committerdate
+
+[tag]
+    sort = version:refname
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[delta]
+    navigate = true
+    line-numbers = true
+    hyperlinks = true
+    keep-plus-minus-markers = false
+    true-color = auto
+    blame-format = "{commit:>7} ⋮ {timestamp:<14} ⋮ {author:<18}"
+    blame-separator-format = "⋮{n:^4}"
+    blame-palette = "#222436"
+    commit-decoration-style = green
+    commit-style = yellow
+    file-added-label = added:
+    file-decoration-style = none
+    file-modified-label = modified:
+    file-removed-label = removed:
+    file-renamed-label = renamed:
+    hunk-header-decoration-style = blue
+    hunk-header-file-style = purple
+    hunk-header-line-number-style = yellow
+    hunk-header-style = file line-number syntax
+    line-numbers = true
+    line-numbers-left-format = {nm:^4}⋮
+    line-numbers-left-style = blue
+    line-numbers-minus-style      = "#e26a75"
+    line-numbers-plus-style       = "#b8db87"
+    line-numbers-right-format = "{np:^4}"
+    line-numbers-right-style = blue
+    line-numbers-zero-style       = "#3b4261"
+    line-numbers-zero-style = white
+    minus-emph-style              = syntax "#6b2e43"
+    minus-empty-line-marker-style = syntax "#3a273a"
+    minus-non-emph-style          = syntax "#3a273a"
+    minus-style                   = syntax "#3a273a"
+    plus-emph-style               = syntax "#305f6f"
+    plus-empty-line-marker-style  = syntax "#273849"
+    plus-non-emph-style           = syntax "#273849"
+    plus-style                    = syntax "#273849"
+    zero-style = syntax
